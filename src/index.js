@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const PRIORITY = {
-    1: "HIGH",
-    2: "MEDIUM",
-    3: "LOW"
-  };
 
   const forma = document.getElementById("create-task-form")
   const task = document.getElementById("new-task-description")
@@ -17,16 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
     newList.innerText = `${task.value}`
 
     const deleteButton = document.createElement("button")
-    deleteButton.innerText = "DONE"
+    deleteButton.innerText = "DONE IT ALREADY"
 
     deleteButton.addEventListener("click", () => {
       newList.remove();
       deleteButton.remove()
+
+      
+
     })
     newTask.append(newList, deleteButton)
+    
   })
 
-  const prioritySpan = document.createElement("span")
-  prioritySpan.innerText = PRIORITY[task.priority]
 
 })
